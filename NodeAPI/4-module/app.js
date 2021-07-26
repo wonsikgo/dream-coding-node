@@ -1,8 +1,15 @@
-const counter = require('./counter.js');
+/* const counter = require('./counter.js'); */
 
-counter.increase();
-counter.increase();
-counter.increase();
-counter.increase();
+import {increase, getCount} from './counter.js';
 
-console.log(counter.getCount());
+/* counter.increase();
+counter.increase();
+counter.increase();
+counter.increase(); */
+
+increase();
+increase();
+increase();
+increase();
+
+console.log(getCount());
