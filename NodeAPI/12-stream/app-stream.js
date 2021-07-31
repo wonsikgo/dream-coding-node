@@ -1,11 +1,10 @@
 const fs = require('fs');
+const data = [];
 
 const readStream = fs.createReadStream('./file.txt', {
   //highWaterMark: 8,
   //encoding: 'utf-8', //64 kbytes
 });
-
-const data = [];
 
 readStream.on('end', () => {
   console.log(data.join(''));
