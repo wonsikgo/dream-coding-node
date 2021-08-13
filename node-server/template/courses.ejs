@@ -7,6 +7,11 @@
     <title>Academy</title>
   </head>
   <body>
-    <h1>Welcome!</h1>
+    <h1>Courses!</h1>
+    <ul>
+      <% courses.forEach(course => { %>
+      <li><%= course.name %></li>
+      <% }) %>
+    </ul>
   </body>
 </html>
