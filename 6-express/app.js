@@ -1,8 +1,12 @@
 import express from 'express';
+import fs from 'fs';
+import fsAsync from 'fs/promises';
 
 const app = express();
 
 app.use(express.json());
+
+app.route('/posts').get((req, res, next) => {});
 
 app.post('/', (req, res, next) => {
   console.log(req.body);
