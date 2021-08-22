@@ -1,15 +1,28 @@
 import express from 'express';
 import fs from 'fs';
 import fsAsync from 'fs/promises';
+import cors from cors;
+import cookieParser from 'cookie-parser'
+import morgan from 'morgan';
+import helmet from 'helmet'
 
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
+app.use(morgan('combined'));
+
+// app.use(cors({
+//   origin: ['http:localhost:8080'],
+//   optionSuccessStatus: 200,
+//   credentials:true
+// }));
 
 app.route('/posts').get((req, res, next) => {});
 
-app.post('/', (req, res, next) => {
+app.get('/', (req, res, next) => {
   console.log(req.body);
+  console.log(req.cookies);
 });
 
 /* 비동기 요청에대한 에러 핸들링 */
