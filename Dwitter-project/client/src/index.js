@@ -15,7 +15,7 @@ const tokenStorage = new TokenStorage();
 const httpClient = new HttpClient(baseURL);
 const authErrorEventBus = new AuthErrorEventBus();
 const authService = new AuthService(httpClient, tokenStorage);
-const tweetService = new TweetService(httpClient);
+const tweetService = new TweetService(httpClient, tokenStorage);
 
 ReactDOM.render(
   <React.StrictMode>

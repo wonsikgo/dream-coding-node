@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import {} from 'express-async-errors';
-
 import * as userRepository from '../data/auth.js';
 
 const jwtSecretKey = 'F2dN7x8HVzBWaQuEEDnhsvHXRWqAR63z';
@@ -28,13 +27,14 @@ export async function signup(req, res) {
 
 export async function login(req, res) {
   const {username, password} = req.body;
+
   const user = await userRepository.findByUsername(username);
   if (!user) {
-    return res.status(401).json({message: 'Invalid user or password'});
+    return res.status(401).json({message: 'Invalid user or password111'});
   }
   const isValidPassword = await bcrypt.compare(password, user.password);
   if (!isValidPassword) {
-    return res.status(401).json({message: 'Invalid user or password'});
+    return res.status(401).json({message: 'Invalid user or password222'});
   }
   const token = createJwtToken(user.id);
   res.status(200).json({token, username});

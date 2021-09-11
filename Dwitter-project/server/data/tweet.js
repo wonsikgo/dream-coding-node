@@ -1,3 +1,5 @@
+import * as userRepository from './auth.js';
+
 let tweets = [
   {
     id: '1',

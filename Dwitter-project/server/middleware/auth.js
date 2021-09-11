@@ -10,7 +10,7 @@ export const isAuth = async (req, res, next) => {
   }
 
   const token = authHeader.split(' ')[1];
-
+  // TODO: Make it secure!
   jwt.verify(token, 'F2dN7x8HVzBWaQuEEDnhsvHXRWqAR63z', async (error, decoded) => {
     if (error) {
       return res.status(401).json(AUTH_ERROR);
@@ -19,7 +19,7 @@ export const isAuth = async (req, res, next) => {
     if (!user) {
       return res.status(401).json(AUTH_ERROR);
     }
-    req.userId = user.id;
+    req.userId = user.id; // req.customData
     next();
   });
 };

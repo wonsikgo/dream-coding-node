@@ -2,15 +2,16 @@
 let users = [
   {
     id: '1',
-    username: 'Wonsik',
+    username: 'bob',
     password: '$2b$12$G9xf8SFq3oTEgdj7ozHQ/uhDOyeQcUEDU8tnOcvpvApuadr3nE5Vm',
-    name: 'Wonsik',
-    email: 'wonsik@gmail.com',
-    url: 'https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-1.png',
+    name: 'Bob',
+    email: 'bob@gmail.com',
+    url: '',
   },
 ];
 
 export async function findByUsername(username) {
+  console.log(`username : ${username}`);
   return users.find((user) => user.username === username);
 }
 

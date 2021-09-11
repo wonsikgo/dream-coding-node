@@ -13,7 +13,7 @@ export default class TweetService {
   }
 
   async postTweet(text) {
-    return this.http.fetch(`${this.baseURL}/tweets/`, {
+    return this.http.fetch(`/tweets`, {
       method: 'POST',
       headers: this.getHeaders(),
       body: JSON.stringify({
@@ -25,14 +25,14 @@ export default class TweetService {
   }
 
   async deleteTweet(tweetId) {
-    return this.http.fetch(`${this.baseURL}/tweets/${tweetId}`, {
+    return this.http.fetch(`/tweets/${tweetId}`, {
       method: 'DELETE',
       headers: this.getHeaders(),
     });
   }
 
   async updateTweet(tweetId, text) {
-    return this.http.fetch(`${this.baseURL}/tweets/${tweetId}`, {
+    return this.http.fetch(`/tweets/${tweetId}`, {
       method: 'PUT',
       headers: this.getHeaders(),
       body: JSON.stringify({text}),
