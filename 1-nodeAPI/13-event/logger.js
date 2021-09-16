@@ -7,10 +7,5 @@ class Logger extends EventEmitter {
     this.emit('log', 'end...');
   }
 }
-function log(callback) {
-  emitter.emit('log', 'started...');
-  callback();
-  emitter.emit('log', 'end...');
-}
 
 module.exports.Logger = Logger;
