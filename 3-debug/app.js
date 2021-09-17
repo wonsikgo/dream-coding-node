@@ -2,11 +2,16 @@ function sayHello() {
   console.log('hello');
 }
 
+function sayGoodBye() {
+  console.log('goodbye~~');
+}
+
 function calculate(x, y) {
   console.log('calculationg..');
   const result = x + y;
   console.log('result : ', result);
   sayHello();
+  sayGoodBye();
   return result;
 }
 
